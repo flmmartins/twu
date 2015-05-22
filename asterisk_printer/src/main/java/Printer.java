@@ -11,8 +11,13 @@ public class Printer {
         this.outputStream = outputStream;
     }
 
-    public void print(String input) throws IOException {
-        outputStream.write(input.getBytes());
+    public void print(String input)  {
+
+        try {
+            outputStream.write(input.getBytes());
+        } catch (IOException e) {
+           System.out.println(e.getMessage());
+        }
 
     }
 }

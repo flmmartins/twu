@@ -9,23 +9,13 @@ public class Asterisk {
     }
 
     public String showNTimesGivenNumber(int numberOfTimes) {
-        try {
-            validateNumber(numberOfTimes);
-            while (numberOfTimes > 0) {
-                this.value = this.value.concat("*");
-                numberOfTimes--;
-            }
-        }
-        catch (NegativeNumberException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        return this.value;
-    }
+        if(numberOfTimes < 0) { throw new IllegalArgumentException("Not possible to print asterisk negative times"); }
 
-    private void validateNumber(int number) throws NegativeNumberException {
-        if (number < 0) {
-            throw new NegativeNumberException();
+        while (numberOfTimes > 0) {
+            this.value = this.value.concat("*");
+            numberOfTimes--;
         }
+
+        return this.value;
     }
 }

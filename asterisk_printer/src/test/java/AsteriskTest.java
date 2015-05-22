@@ -5,6 +5,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.isEmptyString;
 
 public class AsteriskTest {
     Asterisk asterisk;
@@ -29,10 +30,10 @@ public class AsteriskTest {
 
     @Test
     public void printAsteriskGivenNumberZero() {
-        assertThat(asterisk.showNTimesGivenNumber(0), is(""));
+        assertThat(asterisk.showNTimesGivenNumber(0), is(isEmptyString()));
     }
 
-    @Test(expected = NegativeNumberException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void throwsExceptionGivenNegativeNumber() {
         asterisk.showNTimesGivenNumber(-1);
     }

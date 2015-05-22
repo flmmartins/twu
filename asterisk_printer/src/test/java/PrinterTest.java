@@ -4,8 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.regex.Matcher;
 
 
@@ -25,7 +24,8 @@ public class PrinterTest {
     public void printSomething() throws Exception {
         OutputStream mockedOutput = mock(ByteArrayOutputStream.class);
         Printer printer = new Printer(mockedOutput);
-        printer.print("test");
+        printer.print("something");
         verify(mockedOutput).write(anyString().getBytes());
     }
+
 }
