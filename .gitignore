@@ -1,26 +1,26 @@
 *.class
 
 # IDE Files #
-*.ipr
-*.iws
-*.iml
-*.idea
+**.ipr
+**.iws
+**.iml
+**.idea
 
 # Package Files #
-*.jar
-*.war
-*.ear
-*.xml
+**.jar
+**.war
+**.ear
+**.xml
 
 target/
-.classpath
-.project
-.settings/
-.idea/
+*/.classpath
+*/.project
+*/.settings/
+*/.idea/
 
 ## generic files to ignore
-*~
-*.lock
-*.DS_Store
-*.swp
-*.out
+**~
+**.lock
+**.DS_Store
+**.swp
+**.out
